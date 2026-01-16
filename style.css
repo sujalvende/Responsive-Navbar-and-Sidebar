@@ -105,7 +105,7 @@
 
     .nav-links {
         position: fixed;
-        top: 5.1rem;
+        top: 6.7rem;
         left: 0;
         height: 54%;
         width: 100%;
@@ -119,6 +119,14 @@
         transform: translateX(-100%);
         opacity: 0;
         transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+
+    #Home {
+        background-color: #080724;
+    }
+
+    #Home:hover {
+        background-color: #18124f;
     }
 
     .show-bar {
