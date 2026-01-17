@@ -86,27 +86,39 @@ body {
     margin-bottom: 1rem;
 }
 
-.menu-toggle {
+.hamburger {
     display: none;
-    right: 1rem;
-    color: white;
-    position: absolute;
-    right: 1rem;
-    font-size: 2.5rem;
+    flex-direction: column;
     cursor: pointer;
-    padding: 0.5rem;
-    align-content: center;
-    justify-items: center;
+    position: absolute;
+    right: 2rem;
 }
 
-.menu-toggle:hover {
-    color: #00eeff;
-    transform: scale(1.1);
+.bar {
+    height: 4px;
+    width: 30px;
+    background-color: white;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: transform 0.5s ease, opacity 0.4s ease;
 }
 
 @media (max-width: 940px) {
-    .menu-toggle {
-        display: block;
+
+    .hamburger {
+       display: flex;
+    }
+
+    .animate .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .animate .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .animate .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 
     .active-section {
@@ -130,11 +142,33 @@ body {
         justify-content: center;
         align-items: center;
         background-color: #080724;
-        visibility: hidden;
+        pointer-events: none;
         transform: translateX(-100%);
         opacity: 0;
         transition: transform 0.8s ease, opacity 0.8s ease;
     }
+
+    
+    .show-bar {
+        pointer-events: auto;
+        transform: translateX(0);
+        opacity: 1;
+    }    
+
+    .nav-links li {
+        width: 100%;
+        margin: 0 1rem;
+        /* opacity: 0;
+        transition: opacity 0.1s ease 0.8s; */
+    } 
+
+    /* .nav-links li:nth-child(3) {
+        opacity: 0;
+    } */
+
+    /* .show-links:nth-child(3) {
+        opacity: 1;
+    } */
 
     #Home {
         background-color: #080724;
@@ -144,16 +178,6 @@ body {
         background-color: #18124f;
     }
 
-    .show-bar {
-        visibility: visible;
-        transform: translateX(0);
-        opacity: 1;
-    }    
-
-    .nav-links li {
-        width: 100%;
-        margin: 0 1rem;
-    } 
 
     .links {
         padding: 1.5rem;
