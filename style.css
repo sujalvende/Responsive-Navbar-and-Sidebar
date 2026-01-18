@@ -135,7 +135,7 @@ body {
         top: 6.7rem;
         left: 0;
         height: 54%;
-        width: 98%;
+        width: 100%;
         z-index: 100;
         display: flex;
         flex-direction: column;
@@ -151,7 +151,7 @@ body {
     
     .show-bar {
         pointer-events: auto;
-        transform: translateX(1%);
+        transform: translateX(0);
         opacity: 1;
     }    
 
